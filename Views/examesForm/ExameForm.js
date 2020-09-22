@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 import React, { useState, useEffect } from 'react';
-import { View, SafeAreaView, ScrollView, Alert } from 'react-native';
+import { View, SafeAreaView, ScrollView, Alert} from 'react-native';
 import { Appbar, Colors, IconButton, ProgressBar, TextInput, Text } from 'react-native-paper'
 import styles from './ExameFormStyle'
 import exameService from '../../services/exameService'
@@ -47,39 +47,44 @@ const ExameForm = (props) => {
     return (
 
         <SafeAreaView >
-            <Appbar.Header>
-                <Appbar.Action icon="arrow-left" onPress={() => { props.navigation.pop() }} />
-                <Appbar.Content title={item.tipoOutro} subtitle={item.fornecedor} />
-                <Appbar.Action disabled={downloadDisable} icon='download' onPress={download} />
+            <Appbar.Header style={{backgroundColor:Colors.blue400}}>
+                <Appbar.Action icon="arrow-left" onPress={() => { props.navigation.pop() }} color={Colors.white} />
+                <Appbar.Content title={item.tipoOutro} subtitle={item.fornecedor} color={Colors.white} />
+                <Appbar.Action disabled={downloadDisable} icon='download' onPress={download} color={Colors.white} />
             </Appbar.Header>
             <ProgressBar visible={loading} indeterminate={true} color={Colors.purple500} />
             <View >
                 <TextInput
                     label="Tipo"
                     value={item.tipoOutro}
+                    style={styles.lista}
 
 
                 />
                 <TextInput
                     label="Hospital / Laboratório"
                     value={item.fornecedor}
+                    style={styles.lista}
 
                 />
                 <TextInput
                     label="Médico"
                     value={item.medico}
+                    style={styles.lista}
 
                 />
 
                 <ScrollView style={styles.scroll}>
                     <Text>
                         {item.retorno}
+                        
                     </Text>
                 </ScrollView>
 
                 <ScrollView style={styles.scroll}>
                     <Text>
                         {item.resultado}
+                        
                     </Text>
                 </ScrollView>
 

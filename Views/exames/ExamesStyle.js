@@ -5,6 +5,7 @@ const styles = StyleSheet.create({
     scrollView: {
         padding: 20,
         backgroundColor: Colors.lighter,
+        
     },
     forms: {
         justifyContent: 'center'
@@ -62,6 +63,17 @@ const styles = StyleSheet.create({
         right: 0,
         bottom: 0,
     },
+    navibar1: {
+        color: 'red',
+        backgroundColor: 'red',
+        fontSize: 95,
+    },
+    lista:{
+        color:'crimson',
+        backgroundColor:'#fffafa',
+        //backgroundColor:'white',
+        fontSize: 50,
+    }
 });
 
 export default styles

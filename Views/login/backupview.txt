@@ -1,35 +1,9 @@
-/* eslint-disable prettier/prettier */
-import React, { useState } from 'react';
-import { Text, View, Alert, Image, ImageBackground } from 'react-native';
-import { TextInput, Button, Snackbar } from 'react-native-paper'
-import styles from './LoginStyle'
+BACKUP view loginJS
 
-import authService from '../../services/authService';
 
-const Login = (props) => {
-    const [loading, setLoading] = useState(false);
-    const [alertError, setAlertError] = useState(false);
-    const [email, setEmail] = useState('gustavoglu@hotmail.com');
-    const [senha, setSenha] = useState('123456');
 
-    const sendLogin = async () => {
-
-        setLoading(true);
-        try {
-            let res = await authService.login(email, senha);
-            if (res) props.navigation.navigate("Exames");
-        } catch {
-            Alert.alert("teste", "error");
-        }
-
-        setLoading(false);
-    };
-
-    return (
-        
-        <ImageBackground source={require('../assets/teste3.jpg')} style={{width: '100%', height: '100%'}} >
-        <View style={styles.body}>
-            
+<View style={styles.body}>
+            <ImageBackground source={require('../assets/teste1.jpg')} style={{width: '100%', height: '100%'}}>
             
             <Image source={require('../assets/logo1.jpg')}
             style={styles.logo}
@@ -42,7 +16,6 @@ const Login = (props) => {
                     label="Email"
                     value={email}
                     onChangeText={(text) => { setEmail(text) }}
-                    style= {styles.textinput1}
                 />
                 <TextInput
                     mode='outlined'
@@ -52,11 +25,10 @@ const Login = (props) => {
                     style={{ marginBottom: 30 }}
                     value={senha}
                     onChangeText={(text) => { setSenha(text) }}
-                    style= {styles.textinput1}
                 />
             </View>
             <View style={styles.buttons}>
-                <View style={{ minWidth: 150, marginRight: 5, marginTop:20}}>
+                <View style={{ minWidth: 150, marginRight: 5 }}>
                     <Button
 
                         mode="contained"
@@ -68,7 +40,7 @@ const Login = (props) => {
                         accessibilityLabel="Realizar login"
                     >Cadastrar-se</Button>
                 </View>
-                <View style={{ minWidth: 150, marginTop:20 }}>
+                <View style={{ minWidth: 150 }}>
                     <Button
                         mode="contained"
                         color="dodgerblue"
@@ -82,15 +54,12 @@ const Login = (props) => {
                 </View>
 
             </View>
-            
+            </ImageBackground>
 
         
 
         </View>
-       </ImageBackground>
 
     );
 }
 
-
-export default Login;

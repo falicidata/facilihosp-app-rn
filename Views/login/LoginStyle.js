@@ -14,9 +14,10 @@ const styles = StyleSheet.create({
     },
     buttons: {
 
-        // backgroundColor: "powderblue",
         flexDirection: 'row',
-        justifyContent: 'flex-end'
+        justifyContent: 'center',
+        //fontSize: 20,
+        color: 'black'
     },
     engine: {
         position: 'absolute',
@@ -28,7 +29,10 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         justifyContent: 'center',
         padding: 10,
-        backgroundColor: Colors.lighter,
+        //backgroundColor: Colors.lighter,
+        alignContent: 'center',
+        //backgroundColor: "powderblue"
+        
     },
     sectionContainer: {
         marginTop: 32,
@@ -56,6 +60,20 @@ const styles = StyleSheet.create({
         paddingRight: 12,
         textAlign: 'right',
     },
+    logo:{
+        width: 150,
+        height: 150,
+        borderRadius: 300,
+        marginLeft:120,
+        marginBottom: 30
+    },
+    background1:{
+        alignContent:'center',
+    },
+    textinput1:{
+        backgroundColor: 'white',
+    },
+    
 });
 
 export default styles
